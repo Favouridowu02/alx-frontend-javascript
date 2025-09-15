@@ -31,13 +31,14 @@ function printTeacher({ firstName, lastName }: { firstName: string, lastName: st
 }
 
 
+
 // Example usage
 console.log(printTeacher({ firstName: "John", lastName: "Doe" })); // J. Doe
 
 // Interface for StudentClass constructor
-interface StudentConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
-}
+// interface StudentConstructor {
+//   new (firstName: string, lastName: string): StudentClassInterface;
+// }
 
 // Interface for StudentClass
 interface StudentClassInterface {
