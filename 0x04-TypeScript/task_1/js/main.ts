@@ -7,6 +7,10 @@ interface Teacher {
     [key: string]: any;
 };
 
+interface Directors extends Teacher {
+  numberOfReports: number;
+};
+
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
@@ -94,8 +98,8 @@ class Director implements DirectorInterface {
   }
 }
 
-// Teacher class implementing TeacherInterface
-class Teacher implements TeacherInterface {
+// Employee class implementing TeacherInterface
+class Employee implements TeacherInterface {
   workFromHome(): string {
     return "Cannot work from home";
   }
@@ -110,9 +114,9 @@ class Teacher implements TeacherInterface {
 }
 
 // Function to create employee based on salary
-function createEmployee(salary: number | string): Director | Teacher {
+function createEmployee(salary: number | string): Director | Employee {
   if (typeof salary === "number" && salary < 500) {
-    return new Teacher();
+    return new Employee();
   }
   return new Director();
 }
