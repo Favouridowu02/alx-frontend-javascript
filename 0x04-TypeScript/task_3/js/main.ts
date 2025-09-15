@@ -13,7 +13,7 @@ const row: RowElement = {
 const newRowID: RowID = CRUD.insertRow(row);
 
 // Create a const variable named updatedRow with the type RowElement and update row with an age field
-const updatedRow: RowElement = { firstName: "Guillaume", lastName: "Salva", age: 23 };
+const updatedRow: RowElement = { ...row, age: 23 };
 
 // Call updateRow and deleteRow commands
 CRUD.updateRow(newRowID, updatedRow);
