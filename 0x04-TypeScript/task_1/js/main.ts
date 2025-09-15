@@ -23,15 +23,16 @@ console.log(teacher3);
 
 // Interface for the printTeacher function
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  ({ firstName, lastName }: { firstName: string, lastName: string }): string;
 }
 
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
+function printTeacher({ firstName, lastName }: { firstName: string, lastName: string }): string {
+  return `${firstName}. ${lastName}`;
+}
+
 
 // Example usage
-console.log(printTeacher("John", "Doe")); // J. Doe
+console.log(printTeacher({ firstName: "John", lastName: "Doe" })); // J. Doe
 
 // Interface for StudentClass constructor
 interface StudentConstructor {
