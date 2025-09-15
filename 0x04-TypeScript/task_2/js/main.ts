@@ -54,7 +54,7 @@ console.log(createEmployee(200)); // Teacher
 console.log(createEmployee(1000)); // Director
 console.log(createEmployee('$500')); // Director
 
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
@@ -63,5 +63,16 @@ function executeWork(employee: Director | Teacher): string {
     return employee.workDirectorTasks();
   } else {
     return employee.workTeacherTasks();
+  }
+};
+
+type Subjects = "Math" | "History";
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  if (todayClass === "History") {
+    return "Teaching History";
   }
 };
